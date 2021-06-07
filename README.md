@@ -3,5 +3,5 @@
 *React App with Material UI*
 
 ![App](/carts.png)
-![App](/charts.png)
+![App](/chart.png)
 ![App](/bar.png)
