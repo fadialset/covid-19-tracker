@@ -11,13 +11,18 @@ class App extends React.Component {
         const fetchedData = await fetchData()
         this.setState({data: fetchedData})
     }
+    handleCountryChange = async (country) => {
+        const fetchedData = await fetchData(country)
+        this.setState({data: fetchedData, country: country})
+    }
     render(){
-        const { data } = this.state
+        const { data, country } = this.state
     return (
         <div className={styles.container}>
+            <img src="https://i.ibb.co/7QpKsCX/image.png" alt="COVID-19 " className={styles.image}/>
             <Cards data={data}/>
-            <CountryPicker />
-            <Charts />
+            <CountryPicker handleCountryChange={this.handleCountryChange}/>
+            <Charts data={data} country={country}/>
         </div>
     )
   }
